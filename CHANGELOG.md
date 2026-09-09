@@ -25,6 +25,8 @@
 - 知识库文本文档编辑内容未改时点「保存」只关闭抽屉，不触发更新与重建索引
 - 版本升级界面的检查失败提示支持中英本地化：`/update/status` 与 `/update/check` 增加 `error_code` 字段（`pypi_unreachable`），界面按语言展示可读文案；版本信息来自镜像时显示来源提示；`octop update` 失败提示补充网络/代理排查建议
 - SQLite 历史回填为 checkpoint 内容引用创建绑定只读连接的独立解码器和缓存，并在同一读事务内读取，避免访问运行中的 saver 连接；兼容原有 inline 格式。新格式需要配套安装提供 `CheckpointSerializer.with_connection` 的 harness-memory。PostgreSQL 保持原生 graph 历史读取路径。
+- 共享连接器卡片标题被「来自 X」标签挤压截断看不清：标签移至标题下方独立一行；连接器实例与内置目录卡片的长标题截断后悬停均可显示完整标题（#626）
+- 暗色模式下 Tooltip 背景近乎透明、文字与页面内容叠印无法阅读（#626）
 
 ### 变更
 
